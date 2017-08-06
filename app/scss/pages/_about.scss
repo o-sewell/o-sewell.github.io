@@ -1,0 +1,62 @@
+
+.desc {
+	text-align: center;
+	&__image {
+		border-radius: 50%;
+		width: 9em;
+		border: 3px solid $color-accent;
+		height: auto;
+		display: block;
+		margin: 0 auto;
+	}
+	&__title {
+		margin:  .5em 0;
+		letter-spacing: 2px;
+		font-size: .5em;
+		color: #bab6b6;
+	}
+}
+
+
+.ninja-star {
+	height: 1em;
+	width: auto;
+	animation: rotate 3s .5s forwards ease-out;
+}
+
+@keyframes rotate {
+	from {
+	  transform: rotate(0deg);
+	}
+	to {
+	    transform: rotate(360deg);
+	}
+}
+
+.about-me {
+	width: 80%;
+	margin: 1.25em auto;
+
+	p {
+		margin: 0;
+		margin:.5em;
+		font-size: 1.1em;
+	}
+}
+
+.skills {
+	margin: .5em auto;
+	text-align: center;
+
+	 &__svg {
+		width: 2.5em;
+		height: auto;
+		margin: .5em;
+		cursor: pointer;
+		transition: transform .5s ease-out;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}

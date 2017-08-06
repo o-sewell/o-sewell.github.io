@@ -1,0 +1,170 @@
+
+:root {
+  --px: 0;
+  --py: 0;
+}
+
+
+.header {
+  background:#6639B7;
+  text-align: center;
+  &__info {
+	color: $white;
+	background: #512DA8;
+	padding: 1em 0;
+  }
+  &__links {
+	
+  }
+
+}
+
+
+.info-desc, .info-title {
+	padding:0;
+	margin: 0;
+}
+
+.info-desc {
+	color: $color-highlight;
+	margin-top: .5em;
+}
+
+
+.info-image {
+	display: none;
+}
+
+.social {
+	display: none;
+}
+
+.nav {
+	padding: .25em 0;
+}
+
+ .nav__link {
+	color: $white;
+	text-decoration: none;
+	padding: 2em 1em;
+	font-size: 1.2em;
+	cursor: pointer;
+}
+
+.nav__link:hover {
+	color: $color-highlight;
+}
+
+.nav .icon {
+	display: none;
+}
+
+
+@media(min-width: 768px) {
+
+	.header {
+		flex: 1 1 50%;
+		min-height: 100vh;
+
+		@media(min-width: 900px) {
+			flex: 1 1 40%;
+		}
+	}
+
+
+	.info-image {
+		display: block;
+		width: 6.5em;
+		height: auto;
+		border-radius: 50%;
+		margin: 1.5em auto .5em;
+		filter: sepia() saturate(4) hue-rotate(206deg);
+	}
+
+	.social {
+		display: block;
+
+		&__icon {
+			width: .9em;
+			height: auto;
+			margin: 0 2.5px;
+		}
+
+	}
+
+	.nav {
+		margin-top: 2em;
+	}
+
+	.nav__link {
+		letter-spacing: .5px;
+		display: flex;
+		padding: 12px 20px;
+		font-size: 1.25em;
+		transition: all .2s ease;
+		cursor: pointer;
+		border-bottom: 1px solid rgba(255,255,255,.1);
+		position: relative;
+		overflow: hidden;
+		z-index: 2;
+		transition: background-color 0.2s linear;
+
+		&:before,&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			transition: opacity 0.1s linear;
+		}
+
+		&:before {
+			  width: 160px;
+			  height: 120px;
+			  background: radial-gradient(circle at center, #FFF 0%, transparent 60%); 
+			  opacity: 0;
+			  mix-blend-mode: screen;
+			  transform: translate( 
+			    calc( var(--px) * 1px ),
+			    calc( var(--py) * 1px ) 
+			  ) translate(-50%, -50%);
+		}
+
+		&:after {
+			background: inherit;
+			margin: 2px;
+			top: 0; right: 0; bottom: 0; left: 0;
+			opacity: 0;
+			transition-delay: 0.05s;
+		}
+
+		&:hover,&:active {
+			background: rgba(123, 78, 203, 0.9);
+
+			&:before {
+				opacity: 0.6;
+			}
+
+			&:after {
+				opacity: 0.85;
+				 transition-delay: 0s;
+			}
+		}
+
+		}
+
+	.nav .icon {
+		width: auto;
+		height: 1em;
+		display: inline-block;
+		margin-right: 10px;
+	}
+}
+
+@media(min-width: 1100px) {
+	.header {
+		flex: 1 1 28%;
+	}
+
+}

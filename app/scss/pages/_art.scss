@@ -1,0 +1,21 @@
+.art-gallery {
+	margin: 0 auto;
+}
+
+.drawing {
+	width: 20em;
+	height: auto;
+	display: block;
+	margin: 1em auto;
+}
+
+@media(min-width:1000px) {
+	.art-gallery {
+		display: flex;
+		flex-wrap: wrap;
+
+		&__image {
+			flex: 1 1 50%;
+		}
+	}
+}
