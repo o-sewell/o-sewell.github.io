@@ -3,8 +3,8 @@
 }
 
 .drawing {
-	width: 20em;
-	height: auto;
+	width: 320px;
+	height: 320px;
 	display: block;
 	margin: 1em auto;
 }
@@ -13,9 +13,11 @@
 	.art-gallery {
 		display: flex;
 		flex-wrap: wrap;
+		margin: 0 10em;
 
 		&__image {
 			flex: 1 1 50%;
+			margin: .5em 0;
 		}
 	}
 }
